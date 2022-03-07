@@ -1,0 +1,35 @@
+// Clearfix
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+/// Aclarar ligeramente un color
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Oscurecer ligeramente un color
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// icons
+@mixin icons() {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

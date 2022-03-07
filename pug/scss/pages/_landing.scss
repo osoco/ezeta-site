@@ -1,0 +1,326 @@
+// 01 - GENERAL 
+// 02 - WELCOME
+// 03 - SERVICES
+// 04 - TEAM
+// 05 - SUCCESS
+// 06 - WHERE
+
+#landingPage{
+// 01 - GENERAL
+    h1{
+        position: absolute;
+        left: -2000px;
+    }
+    section{
+        padding: $sectionPaddingT 0 $sectionPaddingB;
+        > div {
+            max-width: $containerWidth;
+            padding: 0 20px;
+            margin: auto;
+        }
+        background-position: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+// 02 - WELCOME
+        &#welcome{
+            background-color: $colorK;
+            color: $colorW;
+            position: relative;
+            @media (min-width: $tabletSize) {
+                height: 100%;
+            }
+            .videoBox{//media
+                overflow: hidden;
+                height: 90vh;
+                position: absolute;
+                width: 100vw;
+                background: url(../img/ezeta-portada.jpg) no-repeat;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+                max-width: none;
+                @media (min-width: $tabletSize) {
+                    height: 100%;
+                }
+                &::before{
+                    max-width: none;
+                    content: "";
+                    background: rgba($color-secondary-D, .5);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 5;
+                    filter: brightness(.5);
+                }
+                .videoEmbed{//fx-embed
+                    max-width: none;
+                    position: relative;
+                    transform: translateY(-50%);
+                    display: block;
+                    background-color: transparent;
+                    box-sizing: border-box;
+                    display: none;
+                    @media (min-width: $tabletSize) {
+                        display: block;
+                    }
+                    div{
+                        max-width: none;
+                        position: relative;
+                        height: 0;
+                        padding-bottom:56.6%;
+                        width: 100vw;
+                        iframe{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100vh;
+                            vertical-align: baseline;
+                        }
+                    }
+                }
+            }
+            .generalBox{
+                position: relative;
+                z-index: 6;
+                color: $colorW;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                padding: 100px 30px;
+                @media (min-width: $tabletSize) {
+                    max-width: $containerWidth;
+                    width: 100vw;
+                }
+            }
+            .content{
+                max-width: $tabletSize;
+            }
+            h2{
+                position: absolute;
+                left: -2000px;
+            }
+            .textBox{
+                width: 100%;
+                p{
+                    font-size: 25px;
+                }
+                @media (min-width: $tabletSize) {
+                    max-width: $containerWidth;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            p{
+                font-size: 25px;
+                line-height: 1.2em;
+            }
+
+            .contactBlok{
+                width: 100%;
+                text-align: center;
+            }
+        }
+// 03 - SERVICES
+        &#services{
+            >div{
+                width: 100%;
+            }
+            .box{
+                p{
+                    max-width: $tabletSize;
+                }
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                @media (min-width: $tabletSize) {
+                    display: flex;
+                    justify-content: space-between;
+                    li{
+                        width: calc(100% / 5 - 15px);
+                    }
+                }
+                img{
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+// 04 - TEAM
+        &#team{
+            background: $color-primary url(../img/aros.png) repeat;
+            background-size: 500px;
+            color: $colorW;
+            &.active{
+                .user{
+                    @media (min-width: $tabletSize) {
+                        opacity: .5;
+                    }
+                    &.active{
+                        opacity: 1;
+                        .btndown span{
+                            transform: rotate(135deg);
+                        }
+                    }
+                }
+            }
+            .wrapper{
+                @media (min-width: $tabletSize) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                >div{
+                    background-color: $colorW;
+                    @media (min-width: $tabletSize) {
+                        width: calc(100% / 4 - 15px);
+                    }
+                    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+                    color: $colorK;
+                    border-radius: 5px;
+                    > div{
+                        padding: 30px;
+                    }
+                }
+                .user{
+                    position: relative;
+                    transform: scale(1);
+                    transition: all .5s ease-in-out;
+                    margin-top: 20px;
+                    &.active{
+                        border-radius: 5px 5px 0 0;
+                    }
+                    @media (min-width: $tabletSize) {
+                        margin-bottom: 30px;
+                        margin-bottom: 0;
+                        &.active{
+                            &::before{
+                                position: absolute;
+                                background-color: $colorW;
+                                content: "";
+                                bottom: -40px;
+                                height: 50px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        img{
+                            transform: scale(1.1);
+                            transition: all .5s ease-in-out;
+                        }
+                    }
+                }
+                .photo{
+                    padding: 0;
+                    overflow: hidden;
+                    img{
+                        transform: scale(1);
+                        transition: all .5s ease-in-out;
+                    }
+                }
+                
+                .userContent{
+                    display: none;
+                    overflow: hidden;
+                    &.active{
+                        @media (min-width: $tabletSize) {
+                            margin-top: 20px;
+                            border-radius: 5px;
+                        }
+                        display: block;
+                        flex-basis: 100%;
+                        order: 5;
+                        border-radius: 0 0 5px 5px;
+                    }
+                    @media (min-width: $tabletSize) {
+                        .content{
+                            column-count: 3;
+                            column-gap: 40px;
+                            column-rule: 1px solid $color-3;
+                        }
+                    }
+                }
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 250px;
+                }
+            }
+            .btndown{
+                text-align: center;
+                span{
+                    display: inline-block;
+                    border-width: 0 0 2px 2px;
+                    border-style: solid;
+                    border-color: $colorLink;
+                    border: 0 0 2px 2px;
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(-45deg);
+                }
+            }
+            
+        }
+// 05 - SUCCESS
+        &#success{
+            .wrapper{
+                @media (min-width: $tabletSize) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                >div{
+                    background-color: $colorW;
+                    @media (min-width: $tabletSize) {
+                        width: calc(100% / 3 - 15px);
+                    }
+                    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+                    color: $colorK;
+                    border-radius: 5px;
+                    > div{
+                        padding: 30px;
+                    }
+                }
+                .card{
+                    position: relative;
+                    margin-bottom: 30px;
+                    @media (min-width: $tabletSize) {
+                        margin-bottom: 0;
+                    }
+                }
+                .photo{
+                    padding: 0;
+                    overflow: hidden;
+                }
+            }
+           
+        }
+// 06 - WHERE
+        &#where{
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: $color-comp-2-L;
+            padding-bottom: 0;
+            .contact{
+                @media (min-width: $tabletSize) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 30px;
+                }
+            }
+            .form{
+                input, area{
+                    margin-bottom: 15px;
+                }
+                .buttons{
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

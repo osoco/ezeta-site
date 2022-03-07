@@ -1,0 +1,88 @@
+@font-face {
+    font-family:'roboto_bold';
+    src: url('../fonts/roboto/Roboto_Bold.eot');
+    src: url('../fonts/roboto/Roboto_Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/roboto/Roboto_Bold.woff2') format('woff2'),
+      url('../fonts/roboto/Roboto_Bold.woff') format('woff'),
+      url('../fonts/roboto/Roboto_Bold.svg#Roboto_Bold') format('svg');
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      unicode-range: U+0020-2044;
+    }
+  
+//   @font-face {
+//     font-family:'roboto_medium';
+//     src: url('../fonts/roboto/Roboto_Medium.eot');
+//   src: url('../fonts/roboto/Roboto_Medium.eot?#iefix') format('embedded-opentype'),
+//     url('../fonts/roboto/Roboto_Medium.woff2') format('woff2'),
+//     url('../fonts/roboto/Roboto_Medium.woff') format('woff'),
+//     url('../fonts/roboto/Roboto_Medium.svg#Roboto_Medium') format('svg');
+//     font-weight: 500;
+//     font-style: normal;
+//     font-stretch: normal;
+//     unicode-range: U+0020-2044;
+//   }
+  
+  
+  @font-face {
+    font-family:'roboto_regular';
+    src: url('../fonts/roboto/Roboto_Regular.eot');
+  src: url('../fonts/roboto/Roboto_Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/roboto/Roboto_Regular.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto_Regular.woff') format('woff'),
+    url('../fonts/roboto/Roboto_Regular.svg#Roboto_Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
+  }
+  
+  @font-face {
+    font-family:'roboto_light';
+    src: url('../fonts/roboto/Roboto_Light.eot');
+  src: url('../fonts/roboto/Roboto_Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/roboto/Roboto_Light.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto_Light.woff') format('woff'),
+    url('../fonts/roboto/Roboto_Light.svg#Roboto_Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
+  }
+
+
+
+@font-face {
+    font-family: 'georgiaregular';
+    src: url('../fonts/georgia/georgia-webfont.woff2') format('woff2'),
+         url('../fonts/georgia/georgia-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'georgiabold';
+    src: url('../fonts/georgia/georgiab-webfont.woff2') format('woff2'),
+         url('../fonts/georgia/georgiab-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'georgiaitalic';
+    src: url('../fonts/georgia/georgiai-webfont.woff2') format('woff2'),
+         url('../fonts/georgia/georgiai-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'georgiabold_italic';
+    src: url('../fonts/georgia/georgiaz-webfont.woff2') format('woff2'),
+         url('../fonts/georgia/georgiaz-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
