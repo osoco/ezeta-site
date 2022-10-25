@@ -1,0 +1,321 @@
+// 01 - GENERAL 
+// 02 - WELCOME
+// 03 - ACTUALIDAD
+// 04 - ACTUACION
+// 05 - TEAM
+// 06 - SUCCESS
+// 07 - WHERE
+
+#landingPage{
+// 01 - GENERAL
+    h1{
+        position: absolute;
+        left: -2000px;
+        display: block;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+    .section{
+        padding: var(--sectionPaddingT) 0 var(--sectionPaddingB);
+        background-position: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        > div {
+            max-width: $containerWidth;
+            padding: 0 20px;
+            margin: auto;
+        }
+        img.topImg{
+            object-fit: cover;
+            height: 250px;
+            width: 100%;
+            display: block;
+            margin-bottom: var(--padding);
+        }
+    }
+// 02 - WELCOME
+    #welcome{
+        height: var(--videoH);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--colorK);
+        
+        @media screen and (max-width: $tabletSize) {
+            background-image: url(/img/ezeta-portada.jpg);
+            background-size: cover;
+            background-position: 50%;
+        }
+        .media{
+            @media screen and (max-width: $tabletSize) {
+                display: none;
+            }
+            height: var(--videoH);
+            &::before{
+                content: "";
+                background: #00000060;
+                position: absolute;
+                width: 100%;
+                height: var(--videoH);
+                z-index: 1;
+            }
+
+        }
+        .flx-embed{
+            position: relative;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+        .content{
+            color: var(--colorW);
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            height: var(--videoH);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            > div{
+                font-size: 24px;
+                margin-left: var(--padding);
+                margin-right: var(--padding);
+                @media screen and (min-width: $tabletSize) {
+                    font-size: 34px;
+                }
+                max-width: 760px;
+                text-align: center;
+                text-shadow: 0px 0px 5px var(--colorK-A);
+                + div{
+                    margin-top: var(--padding);
+                }
+            }
+        }
+    }
+// 03 - ACTUALIDAD
+// 04 - ACTUACION
+    #actividad,
+    #actuacion{
+        >div{
+            width: 100%;
+        }
+        ul.columnList{
+            @media screen and (min-width: $tabletSize) {
+                column-count: 4;
+                column-gap: calc(var(--padding)*2);
+                column-rule: 1px solid #eee;
+            }
+            margin:  0 0 calc(2 * var(--padding)) 0;
+            padding: 0;
+            list-style: none;
+            li{
+                line-height: 1.3em;
+                margin: .5em 0;
+                display: inline-block;
+                width: 100%;
+                clear: left;
+            }
+        }
+        .gallery{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            justify-content: space-between;
+            @media screen and (min-width: $tabletSize) {
+                gap: var(--padding);
+            }
+            li{
+                flex-grow: 1;
+            }
+            img{
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    #actuacion{
+        background-color: var(--colorW-1);
+        .columnList li:first-child{
+            column-span: 2;
+        }
+    }
+// 05 - TEAM
+    #team{
+        background: var(--color-primary) url(../img/aros.png) repeat;
+        background-size: 500px;
+        color: var(--colorW);
+        h3 small{
+            display: block;
+        }
+        &.active{
+            .user{
+                @media screen and (min-width: $tabletSize) {
+                    opacity: .5;
+                }
+                &.active{
+                    opacity: 1;
+                    .btndown span{
+                        transform: rotate(135deg);
+                    }
+                }
+            }
+        }
+        .wrapper{
+            @media screen and (min-width: $tabletSize) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            >div{
+                background-color: var(--colorW);
+                @media screen and (min-width: $tabletSize) {
+                    width: calc(100% / 4 - 15px);
+                }
+                box-shadow: var(--box-shadow);
+                color: var(--colorK-A);
+                border-radius: 5px;
+                > div{
+                    padding: 30px;
+                }
+            }
+            .user{
+                position: relative;
+                transform: scale(1);
+                transition: all .5s ease-in-out;
+                margin-top: 20px;
+                &.active{
+                    border-radius: 5px 5px 0 0;
+                }
+                @media screen and (min-width: $tabletSize) {
+                    margin-bottom: 30px;
+                    margin-bottom: 0;
+                    &.active{
+                        &::before{
+                            position: absolute;
+                            background-color: var(--colorW);
+                            content: "";
+                            bottom: -40px;
+                            height: 50px;
+                            width: 100%;
+                        }
+                    }
+                }
+                &:hover{
+                    cursor: pointer;
+                    img{
+                        transform: scale(1.1);
+                        transition: all .5s ease-in-out;
+                    }
+                }
+            }
+            .photo{
+                padding: 0;
+                overflow: hidden;
+                img{
+                    transform: scale(1);
+                    transition: all .5s ease-in-out;
+                }
+            }
+            
+            .userContent{
+                display: none;
+                overflow: hidden;
+                &.active{
+                    @media screen and (min-width: $tabletSize) {
+                        margin-top: 20px;
+                        border-radius: 5px;
+                    }
+                    display: block;
+                    flex-basis: 100%;
+                    order: 5;
+                    border-radius: 0 0 5px 5px;
+                }
+                @media screen and (min-width: $tabletSize) {
+                    .content{
+                        column-count: 3;
+                        column-gap: 40px;
+                        column-rule: 1px solid var(--color-3);
+                    }
+                }
+            }
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 250px;
+            }
+        }
+        .btndown{
+            text-align: center;
+            span{
+                display: inline-block;
+                border-width: 0 0 2px 2px;
+                border-style: solid;
+                border-color: var(--colorLink);
+                border: 0 0 2px 2px;
+                width: 20px;
+                height: 20px;
+                transform: rotate(-45deg);
+            }
+        }
+        
+    }
+// 06 - SUCCESS
+    #success{
+        background-color: var(--colorW);
+        .wrapper{
+            gap: var(--padding);
+            @media screen and (min-width: $tabletSize) {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            .card{
+                position: relative;
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 1.2em;
+                background-color: var(--colorW);
+                box-shadow: var(--box-shadow);
+                border-radius: 5px;
+                > div{
+                    padding: 30px;
+                }
+                p{
+                    margin: 0;
+                }
+                @media screen and (min-width: $tabletSize) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        
+    }
+// 07 - WHERE
+    #where{
+        flex-direction: column;
+        background-color: var(--colorW-1);
+        padding-bottom: 0;
+        .contact{
+            @media screen and (min-width: $tabletSize) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 30px;
+            }
+            margin-bottom: var(--padding);
+        }
+        .form{
+            input, area{
+                margin-bottom: 15px;
+            }
+            .buttons{
+                text-align: right;
+            }
+        }
+    }
+}

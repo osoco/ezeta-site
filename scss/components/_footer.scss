@@ -1,0 +1,72 @@
+// 00 + GENERAL
+
+footer{
+    background-color: var(--colorK-A);
+    padding: 30px 20px;
+    font-size: calc(var(--font-size-base)*.75); // 12px
+    font-family: var(--font-footer);
+    .logo{
+        height: 60px;
+        margin-bottom: 20px;
+        @media screen and (min-width:768px) {
+            margin-bottom: 0;
+        }
+    }
+    > div{
+        width: 100%;
+        max-width: 1250px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--colorW);
+        @media screen and (min-width:768px) {
+            display: flex;
+            align-items: center;
+            div{
+                flex-basis: 100%;
+                text-align: center;
+            }
+        }
+        div{
+            line-height: 30px;
+        }
+        a{
+            color: var(--colorW);
+            text-decoration: none;
+            img{
+                width: 15px;
+                vertical-align: middle;
+                margin: 0 10px;
+            }
+        }
+    }
+    a.ancla {
+        position: fixed;
+        transition: all .5s ease-in-out;
+        opacity: 0;
+        
+        z-index: 2;
+        bottom: 0;
+        right: 0;
+        background-color: var(--colorK-A);
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        &::before{
+            content: '';
+            position: absolute;
+            border-style: solid;
+            z-index: 1;
+            border-width: 0 15px 15px;
+            border-color: var(--colorK-A) transparent;
+            top: -1 * 15px;
+            left: 50%;
+            margin-left: -1 * 15px;
+        }
+        &.active{
+            opacity: .9;
+            .openedMenu &{
+                opacity: 0;
+            }
+        }
+    }
+}

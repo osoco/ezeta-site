@@ -1,0 +1,96 @@
+:root{
+--font-size-base:		        1.6rem;
+--line-height-base:             1.6em;
+--line-height-title:            1.3em;
+
+
+--sectionPaddingT:              100px;
+--sectionPaddingB:              100px;
+--padding:                      30px;
+
+// Colors
+
+--colorK:                       #393b3d;
+--colorK-A:                     rgba(42, 42, 42, 0.9);
+--colorK-1:                     #5D5A5D;
+--colork-2:                     #898387;
+--color-3:                      #BDBCC1;
+--colorW-1:                     #E5E4E9;
+--colorW:                       #F9FCFF;
+
+
+    --color-primary-D:           #003688;
+    --color-primary:             #006DBB;
+    --color-primary-L:           #99B5EC;
+
+    --color-secondary-D:         #3B99B7;
+    --color-secondary:           #8AD1E8;
+    --color-secondary-L:         #D2F2FD;
+
+    --color-comp-1-D:            #CBC976;
+    --color-comp-1:              #F1EF9F;
+    --color-comp-1-L:            #FFFCCB;
+
+    --color-comp-2-D:            #CB8A29;
+    --color-comp-2:              #F1BC34;
+    --color-comp-2-L:            #FAD67B;
+
+    --color-comp-3-D:            #FCA29D;
+    --color-comp-3:              #B04A45;
+    --color-comp-3-D:            #8A3632;
+
+    --box-shadow:                0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+
+// Wellcome
+
+
+
+    --videoH:                  70vh;
+
+    @media screen and (min-width:768px) {
+        --videoH:                  40vh;
+    }
+    @media screen and (min-width:900px) {
+        --videoH:                  50vh;
+    }
+    @media screen and (min-width:120px) {
+        --videoH:                  60vh;
+    }
+    @media screen and (min-width:1500px) {
+        --videoH:                  70vh;
+    }
+    @media screen and (min-width:2000px) {
+        --videoH:                  80vh;
+    }
+    // $tabletSize:                   768px;
+    // $containerWidth:               1280px;
+    // $bigSize:                      1900px;
+
+
+// Text
+--colorBody:					var(--colorW);
+--colorTitle:                   var(--colorK-A);
+--colorText:					var(--colorK-A);
+--colorLink:                    var(--color-primary);
+--colorActiveMenu:              var(--color-secondary);
+// ------
+--color-border:                 var(--colork-2);
+
+
+// Fonts
+--font-title-regular:           'roboto_regular', verdana, arial;
+--font-title-bold:              'roboto_bold', verdana, arial;
+--font-title-light:             'roboto_light', verdana, arial;
+
+--font-regular:				    'georgiaregular', georgia, times;
+--font-bold:					'georgiabold', georgia, times;
+--font-italic:				    'georgiaitalic', georgia, times;
+
+--font-form:                    'roboto_regular', verdana, arial;
+--font-btn:                     'roboto_regular', verdana, arial;
+--font-footer:                  'roboto_regular', verdana, arial;
+}
+
+$tabletSize:                   768px;
+$containerWidth:               1280px;
+$bigSize:                      1900px;
