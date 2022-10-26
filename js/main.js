@@ -31,7 +31,6 @@ $(function(){
         $('html, body').stop().animate({ scrollTop: (new_position.top + -60) }, 500);
         e.preventDefault();
     });
-    
     $("#hamburguerButton").click(function(){
         $('body').toggleClass('openedMenu');
     });
@@ -40,7 +39,8 @@ $(function(){
     });
 
     // TEAM - Desplegables
-    $(".user").click(function(){
+    $(".user").click(function(e){
+        e.stopPropagation()
         if ($(this).hasClass('active')) {
             $('.user.active + div').removeClass('active');
             $(this).removeClass('active');
@@ -52,5 +52,11 @@ $(function(){
             $('.user.active + div').addClass('active');
             $('#team').addClass('active');
         }
+    });
+    $('#team').click(function(e){
+        e.stopPropagation()
+        $('#team .user.active + div').removeClass('active');
+        $('#team').removeClass('active');
+        $('#team  .user').removeClass('active');
     });
 })

@@ -79,7 +79,7 @@
   --color-comp-3: #B04A45;
   --color-comp-3-D: #8A3632;
   --box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  --videoH: 70vh;
+  --videoH: 90vh;
   --colorBody:	var(--colorW);
   --colorTitle: var(--colorK-A);
   --colorText:	var(--colorK-A);
@@ -106,19 +106,19 @@
     --videoH: 50vh;
   }
 }
-@media screen and (min-width: 120px) {
-  :root {
-    --videoH: 60vh;
-  }
-}
 @media screen and (min-width: 1500px) {
   :root {
     --videoH: 70vh;
   }
 }
-@media screen and (min-width: 2000px) {
+@media screen and (max-width: 930px) and (max-height: 450px) {
   :root {
-    --videoH: 80vh;
+    --videoH: 90vh;
+  }
+}
+@media screen and (max-width: 1200px) and (max-height: 650px) {
+  :root {
+    --videoH: 90vh;
   }
 }
 
@@ -595,6 +595,28 @@ footer a.ancla.active {
 @media screen and (min-width: 768px) {
   #landingPage #actividad ul.columnList,
 #landingPage #actuacion ul.columnList {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: calc(var(--padding) * 2);
+         column-gap: calc(var(--padding) * 2);
+    -moz-column-rule: 1px solid #eee;
+         column-rule: 1px solid #eee;
+  }
+}
+@media screen and (min-width: 900px) {
+  #landingPage #actividad ul.columnList,
+#landingPage #actuacion ul.columnList {
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: calc(var(--padding) * 2);
+         column-gap: calc(var(--padding) * 2);
+    -moz-column-rule: 1px solid #eee;
+         column-rule: 1px solid #eee;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #landingPage #actividad ul.columnList,
+#landingPage #actuacion ul.columnList {
     -moz-column-count: 4;
          column-count: 4;
     -moz-column-gap: calc(var(--padding) * 2);
@@ -652,7 +674,7 @@ footer a.ancla.active {
 #landingPage #team h3 small {
   display: block;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 950px) {
   #landingPage #team.active .user {
     opacity: 0.5;
   }
@@ -663,11 +685,18 @@ footer a.ancla.active {
 #landingPage #team.active .user.active .btndown span {
   transform: rotate(135deg);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 950px) {
   #landingPage #team .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #landingPage #team .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 20px;
   }
 }
 #landingPage #team .wrapper > div {
@@ -675,11 +704,6 @@ footer a.ancla.active {
   box-shadow: var(--box-shadow);
   color: var(--colorK-A);
   border-radius: 5px;
-}
-@media screen and (min-width: 768px) {
-  #landingPage #team .wrapper > div {
-    width: calc(25% - 15px);
-  }
 }
 #landingPage #team .wrapper > div > div {
   padding: 30px;
@@ -689,11 +713,13 @@ footer a.ancla.active {
   transform: scale(1);
   transition: all 0.5s ease-in-out;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 #landingPage #team .wrapper .user.active {
   border-radius: 5px 5px 0 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 950px) {
   #landingPage #team .wrapper .user {
     margin-bottom: 30px;
     margin-bottom: 0;
@@ -721,24 +747,56 @@ footer a.ancla.active {
 #landingPage #team .wrapper .photo img {
   transform: scale(1);
   transition: all 0.5s ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 360px;
+}
+@media screen and (min-width: 500px) {
+  #landingPage #team .wrapper .photo img {
+    height: 250px;
+  }
+}
+#landingPage #team .wrapper .user-txt {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+#landingPage #team .wrapper .user-txt h3 + div {
+  flex-grow: 1;
 }
 #landingPage #team .wrapper .userContent {
   display: none;
   overflow: hidden;
 }
+@media screen and (min-width: 950px) {
+  #landingPage #team .wrapper .userContent {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  #landingPage #team .wrapper .userContent:nth-child(2), #landingPage #team .wrapper .userContent:nth-child(4) {
+    grid-row-start: 2;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #landingPage #team .wrapper .userContent {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+}
 #landingPage #team .wrapper .userContent.active {
   display: block;
-  flex-basis: 100%;
+  flex-grow: 1;
   order: 5;
   border-radius: 0 0 5px 5px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 950px) {
   #landingPage #team .wrapper .userContent.active {
     margin-top: 20px;
     border-radius: 5px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 950px) {
   #landingPage #team .wrapper .userContent .content {
     -moz-column-count: 3;
          column-count: 3;
@@ -749,13 +807,14 @@ footer a.ancla.active {
   }
 }
 #landingPage #team .wrapper img {
-  -o-object-fit: cover;
-     object-fit: cover;
   width: 100%;
-  height: 250px;
+}
+#landingPage #team .wrapper img + p {
+  margin-top: var(--padding);
 }
 #landingPage #team .btndown {
   text-align: center;
+  height: 30px;
 }
 #landingPage #team .btndown span {
   display: inline-block;
@@ -787,12 +846,14 @@ footer a.ancla.active {
   background-color: var(--colorW);
   box-shadow: var(--box-shadow);
   border-radius: 5px;
-}
-#landingPage #success .wrapper .card > div {
-  padding: 30px;
+  border: 1px solid #ccc;
+  padding: var(--padding);
+  display: flex;
+  align-items: center;
 }
 #landingPage #success .wrapper .card p {
-  margin: 0;
+  margin: 15px 0;
+  font-style: italic;
 }
 @media screen and (min-width: 768px) {
   #landingPage #success .wrapper .card {
